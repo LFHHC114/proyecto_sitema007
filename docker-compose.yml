@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  sistema007:
+    build: .
+    ports:
+      - "8080:80"
