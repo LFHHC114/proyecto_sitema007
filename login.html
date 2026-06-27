@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Sistema007</title>
+
+<style>
+
+ /* BASE */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+
+ /* FONDO */
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg, #0B2C5D, #00B8C4);
+}
+
+/* TARJETA PRINCIPAL */
+.login-container{
+width: 380px;
+background: rgba(255,255,255,0.12);
+backdrop-filter: blur(15px);
+border-radius: 20px;
+padding: 40px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+border: 1px solid rgba(255,255,255,0.25);
+text-align:center;
+color:white;
+}
+
+.login-container h2{
+margin-bottom: 25px;
+font-size: 28px;
+color: white;
+}
+
+ /*INPUTS */
+input{
+width:100%;
+padding:12px 15px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.3);
+background: rgba(255,255,255,0.15);
+color:white;
+outline:none;
+transition:0.3s;
+}
+
+input::placeholder{
+color: rgba(255,255,255,0.8);
+}
+
+input:focus{
+border-color:#00B8C4;
+box-shadow:0 0 10px rgba(0,184,196,0.5);
+}
+
+ /* BOTÓN */
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:12px;
+border:none;
+background:white;
+color:#0B2C5D;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#00B8C4;
+color:white;
+transform: translateY(-3px);
+box-shadow:0 10px 20px rgba(0,184,196,0.4);
+}
+
+/* TEXTO EXTRA */
+.login-container p{
+margin-top:15px;
+font-size:13px;
+opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h2>Sistema007</h2>
+
+<form onsubmit="login(event)">
+
+<input type="text" id="usuario" placeholder="Usuario">
+
+<input type="password" id="password" placeholder="Contraseña">
+
+<button type="submit">Ingresar</button>
+
+</form>
+
+<p>Acceso seguro al sistema farmacéutico</p>
+
+</div>
+
+<script>
+function login(event){
+event.preventDefault();
+
+let usuario = document.getElementById("usuario").value;
+let password = document.getElementById("password").value;
+
+if(usuario === "admin" && password === "1234"){
+    alert("Bienvenido a Sistema007");
+} else {
+    alert("Usuario o contraseña incorrectos");
+}
+}
+</script>
+
+</body>
+</html>
